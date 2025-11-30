@@ -1,0 +1,68 @@
+# ---- General ----
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.swp
+*.swo
+*.bak
+*.orig
+
+# IDE / Editor
+.vscode/
+.idea/
+*.iml
+
+# OS / Misc
+.env
+.env.*.local
+*.local.env
+
+# ---- Python / Backend ----
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+
+# ---- Node / Frontend ----
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-lock.yaml
+package-lock.json
+
+# Vite / React build outputs
+frontend/dist/
+frontend/.vite/
+
+# ---- Docker / Compose ----
+**/.dockerignore
+*.pid
+
+# ---- Local data / volumes (if any) ----
+db_data/
+minio_data/
+
+# ---- Cursor / Editor tooling ----
+.cursor/
