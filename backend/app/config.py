@@ -11,9 +11,9 @@ class Settings(BaseSettings):
     minio_access_key: str
     minio_secret_key: str
 
-    jwt_secret_key: str = "change_this_in_production"
-    jwt_algorithm: str = "HS256"
-    jwt_access_token_expire_minutes: int = 60
+    jwt_secret_key: str
+    jwt_algorithm: str
+    jwt_access_token_expire_minutes: int
 
     class Config:
         env_file = ".env"
