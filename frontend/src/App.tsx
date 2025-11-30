@@ -42,6 +42,13 @@ export const App: React.FC = () => {
     setError(null);
   };
 
+  const resetAuthState = () => {
+    setUsername("");
+    setPassword("");
+    setPasswordConfirm("");
+    setAuthMode("login");
+  };
+
   const handleAuthSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
@@ -58,6 +65,7 @@ export const App: React.FC = () => {
       setToken(newToken);
       window.localStorage.setItem("authToken", newToken);
       resetWorkspaceState();
+      resetAuthState();
     } catch (err) {
       setError((err as Error).message);
     }
@@ -67,6 +75,7 @@ export const App: React.FC = () => {
     setToken(null);
     window.localStorage.removeItem("authToken");
     resetWorkspaceState();
+    resetAuthState();
   };
 
   const updateFieldName = (index: number, name: string) => {
@@ -151,13 +160,25 @@ export const App: React.FC = () => {
           <div className="tabs">
             <button
               className={authMode === "login" ? "tab active" : "tab"}
-              onClick={() => setAuthMode("login")}
+              onClick={() => {
+                setAuthMode("login");
+                setUsername("");
+                setPassword("");
+                setPasswordConfirm("");
+                setError(null);
+              }}
             >
               Login
             </button>
             <button
               className={authMode === "register" ? "tab active" : "tab"}
-              onClick={() => setAuthMode("register")}
+              onClick={() => {
+                setAuthMode("register");
+                setUsername("");
+                setPassword("");
+                setPasswordConfirm("");
+                setError(null);
+              }}
             >
               Register
             </button>
